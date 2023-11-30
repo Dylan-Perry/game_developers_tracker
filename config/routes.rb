@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get "/", to: "welcome#index"
 
   get "/devs", to: "devs#index"
+  get "/devs/new", to: "devs#new"
 
   get "/games", to: "games#index"
+  get "/games/new", to: "games#new"
 end
