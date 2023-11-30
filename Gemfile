@@ -53,6 +53,11 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem "pry"
   gem "rspec-rails"
+  gem "shoulda-matchers" # needs adding code from shoulda-matchers github to spec_helper.rb
+  gem "capybara"
+  gem "simplecov"
+  gem "launchy"
+  gem "orderly"
 end
 
 group :development do
