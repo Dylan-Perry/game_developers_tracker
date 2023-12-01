@@ -1,5 +1,9 @@
 <h1>All Game Developers</h1>
 
 <% @devs.each do |dev| %>
-    <h3><%= dev %></h3>
+    <h3><%= dev.name %></h3>
+    <ul>
+        <li><p>Number of Employees: <%= dev.employees %></p></li>
+        <li><p>Operational: <%= dev.operational? %></p></li>
+    </ul>
 <% end %>
