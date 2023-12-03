@@ -30,4 +30,19 @@ RSpec.describe 'the devs index page' do
         expect(page).to have_content(@blizzard.operational?)
         expect(page).to have_content(@interplay.operational?)
     end
+
+    it "lists devs in order of last created" do
+        visit "/devs/"
+
+        expect(@interplay.name).to appear_before(@blizzard.name)
+        expect(@blizzard.name).to appear_before(@nintendo.name)
+    end
+
+    it "displays when the dev entry was created" do
+        visit "/devs/"
+
+        expect(page).to have_content(@nintendo.created_at)
+        expect(page).to have_content(@blizzard.created_at)
+        expect(page).to have_content(@interplay.created_at)
+    end
 end
