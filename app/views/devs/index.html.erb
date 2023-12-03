@@ -1,9 +1,12 @@
 <h1>All Game Developers</h1>
+<hr class="solid">
 
 <% @devs.each do |dev| %>
     <h3><%= dev.name %></h3>
+    <p>Entry created: <%= dev.created_at %><p>
     <ul>
         <li><p>Number of Employees: <%= dev.employees %></p></li>
         <li><p>Operational: <%= dev.operational? %></p></li>
     </ul>
+    <hr class="solid">
 <% end %>
