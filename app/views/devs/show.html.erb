@@ -1,0 +1,11 @@
+<h1><%= @dev.name %></h1>
+    <ul>
+        <li><h3>Number of Employees: <%= @dev.employees %></h3></li>
+        <li><h3>Operational: <%= @dev.operational? %></h3></li>
+        <li><h3>Games:</h3></li>
+        <ul>
+            <% @dev.games.each do |game| %>
+                <li><h3><%= game.name %></h3></li>
+            <% end %>
+        </ul>
+    </ul>
