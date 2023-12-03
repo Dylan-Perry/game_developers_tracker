@@ -1,3 +1,10 @@
+<h1>All Games</h1>
+
 <% @games.each do |game| %>
-    <h3><%= game %></h3>
+    <h3><%= game.name %></h3>
+    <ul>
+        <li><p>Developed By: <%= game.dev.name %></p></li>
+        <li><p>Number of Players: <%= game.players %></p></li>
+        <li><p>Has Online Play: <%= game.online? %></p></li>
+    </ul>
 <% end %>
