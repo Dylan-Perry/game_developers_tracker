@@ -1,5 +1,5 @@
 class Dev < ApplicationRecord
-    has_many :songs
+    has_many :games
 
     def operational?
         self.operational ? "Yes" : "No"
