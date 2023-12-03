@@ -38,4 +38,12 @@ RSpec.describe 'the devs show page' do
         expect(page).to_not have_content(@naughty_dog.games.find_by(name: "Blonkis")[:name])
     end
 
+    it "displays how many games a developer has published" do
+        visit "/devs/#{@nintendo.id}"
+        expect(page).to have_content(@nintendo.games.count)
+
+        visit "/devs/#{@naughty_dog.id}"
+        expect(page).to have_content(@naughty_dog.games.count)
+    end
+
 end
