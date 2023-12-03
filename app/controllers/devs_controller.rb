@@ -1,6 +1,6 @@
 class DevsController < ApplicationController
     def index
-        @devs = Dev.all
+        @devs = Dev.order(created_at: :DESC)
     end
 
     def new
