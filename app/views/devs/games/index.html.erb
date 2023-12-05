@@ -1,0 +1,11 @@
+<p><a href="/">Home</a> — <a href="/devs">Developer Index</a> — <a href="/games">Games Index</a></p>
+<hr class="solid">
+
+<h1><%= @dev.name %>'s Games</h1>
+    <% @dev.games.each do |game| %>
+        <h3><%= game.name %></h3>
+        <ul>
+            <li><p>Number of Players: <%= game.players %></p></li>
+            <li><p>Has Online Features: <%= game.online? %></p></li>
+        </ul>
+    <% end %>
