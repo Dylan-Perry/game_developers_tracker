@@ -12,15 +12,9 @@ class DevsController < ApplicationController
     end
 
     def create
-        dev = Dev.new({
-            name: params[:name],
-            employees: params[:employees],
-            operational: params[:operational]
-        })
+        dev = Dev.create(dev_params)
 
-        dev.save
-
-        redirect_to "/devs"
+        redirect_to "/devs/#{dev.id}"
     end
     
     def show
@@ -31,5 +25,9 @@ class DevsController < ApplicationController
         if type == "alpha"
             Dev.order(created_at: :DESC)
         end
+    end
+
+    def dev_params
+        params.permit(:name, :employees, :operational)
     end
 end
