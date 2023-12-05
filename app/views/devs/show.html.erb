@@ -5,10 +5,11 @@
     <ul>
         <li><h3>Number of Employees: <%= @dev.employees %></h3></li>
         <li><h3>Operational: <%= @dev.operational? %></h3></li>
-        <li><h3>Number of Games: <%= @dev.games.count %></h3></li>
+        <li><h3><a href=<%= "#{@dev.id}/games" %>>Number of Games: <%= @dev.games.count %></a></h3></li>
         <ul>
             <% @dev.games.each do |game| %>
                 <li><p><%= game.name %></p></li>
             <% end %>
         </ul>
     </ul>
+<h4><a href=<%= "#{@dev.id}/edit" %> title="Edit Developer">Edit Developer</a></h4>

@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get "/devs/new", to: "devs#new"
   post "/devs", to: "devs#create"
   get "/devs/:id", to: "devs#show"
+  get "devs/:id/edit", to: "devs#edit"
+  patch "devs/:id", to: "devs#update"
 
   get "/devs/:id/games", to: "devs/games#index"
 

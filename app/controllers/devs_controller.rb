@@ -21,6 +21,17 @@ class DevsController < ApplicationController
         @dev = Dev.find(params[:id])
     end
 
+    def edit
+        @dev = Dev.find(params[:id])
+    end
+
+    def update
+        dev = Dev.find(params[:id])
+        dev.update(dev_params)
+
+        redirect_to "/devs/#{dev.id}"
+    end
+
     def self.sort(type) # see notes above on sorting
         if type == "alpha"
             Dev.order(created_at: :DESC)
