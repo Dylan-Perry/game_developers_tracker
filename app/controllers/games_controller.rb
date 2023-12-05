@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
     def index
-        @games = Game.order(created_at: :DESC)
+        @games = Game.order(created_at: :DESC).where(online: true)
     end
 
     def new
