@@ -46,4 +46,11 @@ RSpec.describe 'the devs show page' do
         expect(page).to have_content(@naughty_dog.games.count)
     end
 
+    it "links to edit developer" do
+        visit "/devs/#{@nintendo.id}"
+        click_link("Edit Developer")
+
+        expect(current_path).to eq("/devs/#{@nintendo.id}/edit")
+    end
+
 end
