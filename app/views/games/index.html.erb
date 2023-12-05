@@ -1,5 +1,9 @@
-<h1>All Games</h1>
+<p><a href="/">Home</a> — <a href="/devs">Developer Index</a> — <a href="/games">Games Index</a></p>
 <hr class="solid">
+
+<h1>Game Index</h1>
+<p>This page shows all individual Games in the tracker database.</p>
+<br>
 
 <% @games.each do |game| %>
     <h3><%= game.name %></h3>
@@ -9,5 +13,5 @@
         <li><p>Number of Players: <%= game.players %></p></li>
         <li><p>Has Online Play: <%= game.online? %></p></li>
     </ul>
-    <hr class="solid">
+    <br>
 <% end %>
