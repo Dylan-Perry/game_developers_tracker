@@ -13,12 +13,12 @@ Rails.application.routes.draw do
   get "devs/:id/edit", to: "devs#edit"
   patch "devs/:id", to: "devs#update"
 
-  get "/devs/:id/games", to: "devs/games#index"
-
   get "/games", to: "games#index"
   get "/games/new", to: "games#new"
   post "/games", to: "games#create"
   get "/games/:id", to: "games#show"
   
-
+  get "/devs/:id/games", to: "devs/games#index"
+  get "/devs/:id/games/new", to: "devs/games#new"
+  post "/devs/:id/games", to: "devs/games#create"
 end

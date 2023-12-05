@@ -31,4 +31,12 @@ RSpec.describe 'the dev_games index page' do
         expect(page).to have_content(@zelda.online?)
         expect(page).to have_content(@starcraft.online?)
     end
+
+    it "links to Add Game page" do
+        visit "/devs/#{@nintendo.id}/games"
+
+        click_link("Add Game to Developer")
+
+        expect(current_path).to eq("/devs/#{@nintendo.id}/games/new")
+    end
 end
