@@ -7,3 +7,4 @@
         <li><h3>Number of Players: <%= @game.players %></h3></li>
         <li><h3>Has Online Features: <%= @game.online? %></h3></li>
     </ul>
+    <h4><a href=<%= "#{@game.id}/edit" %> title="Edit Game">Edit <%= @game.name %></a></h4>

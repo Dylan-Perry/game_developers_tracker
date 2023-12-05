@@ -1,0 +1,15 @@
+<p><a href="/">Home</a> — <a href="/devs">Developer Index</a> — <a href="/games">Games Index</a></p>
+<hr class="solid">
+
+<h1>Edit <%= "#{@game.name}" %></h1>
+
+<form action=<%= "/games/#{@game.id}" %>  method="post">
+    <input name="_method" type="hidden" value="patch" />
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <p>Game Name:</p>
+    <input type='text' name='name' placeholder='e.g. Super Mario Bros'/><br/>
+    <p>Number of Players:</p>
+    <input type='number' name='players' placeholder='e.g. 2'/><br/><br>
+    <input type="checkbox" name="online" value="true">
+    <label for="online">Has Online Play?</label><br/><br/>
+    <button type="submit" name="update_game">Update <%= "#{@game.name}" %></button></form>

@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get "/games/new", to: "games#new"
   post "/games", to: "games#create"
   get "/games/:id", to: "games#show"
+  get "/games/:id/edit", to: "games#edit"
+  patch "games/:id", to: "games#update"
   
   get "/devs/:id/games", to: "devs/games#index"
   get "/devs/:id/games/new", to: "devs/games#new"

@@ -35,4 +35,11 @@ RSpec.describe 'the games show page' do
         expect(page).to have_content(@lil_pump.online?)
         expect(page).to_not have_content(@blonkis.online?)
     end
+
+    it "links to edit game" do
+        visit "/games/#{@lil_pump.id}"
+        click_link("Edit Game")
+
+        expect(current_path).to eq("/games/#{@lil_pump.id}/edit")
+    end
 end
