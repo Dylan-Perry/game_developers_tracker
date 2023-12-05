@@ -1,0 +1,15 @@
+<p><a href="/">Home</a> — <a href="/devs">Developer Index</a> — <a href="/games">Games Index</a></p>
+<hr class="solid">
+
+<h1>Edit <%= "#{@dev.name}" %></h1>
+
+<form action=<%= "/devs/#{@dev.id}" %>  method="post">
+    <input name="_method" type="hidden" value="patch" />
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <p>Developer Name:</p>
+    <input type='text' name='name' placeholder='e.g. Naughty Dog'/><br/>
+    <p>Number of Employees:</p>
+    <input type='number' name='employees' placeholder='e.g. 30'/><br/><br/>
+    <input type="checkbox" name="operational" value="true">
+    <label for="operational">Developer is currently operational</label><br/><br/>
+    <button type="submit" name="update_developer">Update <%= "#{@dev.name}" %></button></form>
