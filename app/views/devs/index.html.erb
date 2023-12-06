@@ -13,5 +13,10 @@
         <li><p>Number of Employees: <%= dev.employees %></p></li>
         <li><p>Operational: <%= dev.operational? %></p></li>
     </ul>
+    <h4><a href=<%= request.original_url + "/#{dev.id}/edit" %>>Edit <%= dev.name %></a></h4>
     <br>
 <% end %>
+
+<%# Useful later for sorting stuff, US-16 %>
+
+<%# <%= link_to "Sort Alphabetically", "/devs?sort=alpha" %> %>

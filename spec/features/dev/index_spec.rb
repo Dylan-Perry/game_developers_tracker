@@ -45,4 +45,11 @@ RSpec.describe 'the devs index page' do
         expect(page).to have_content(@blizzard.created_at)
         expect(page).to have_content(@interplay.created_at)
     end
+
+    it "links to edit each developer" do
+        visit "/devs/"
+        click_link("Edit #{@nintendo.name}")
+
+        expect(page).to have_content("Edit #{@nintendo.name}")
+    end
 end
