@@ -54,4 +54,12 @@ RSpec.describe 'the games index page' do
 
         expect(page).to have_content("Edit #{@starcraft.name}")
     end
+
+    it "deletes a game" do
+        visit "/games/"
+        click_link("Delete #{@starcraft.name}")
+
+        expect(current_path).to eq("/games")
+        expect(page).to_not have_content("#{@starcraft.name}")
+    end
 end

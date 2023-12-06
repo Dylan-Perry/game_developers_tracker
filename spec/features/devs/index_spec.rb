@@ -52,4 +52,12 @@ RSpec.describe 'the devs index page' do
 
         expect(page).to have_content("Edit #{@nintendo.name}")
     end
+
+    it "deletes a developer" do
+        visit "/devs/"
+        click_link("Delete #{@nintendo.name}")
+
+        expect(current_path).to eq("/devs")
+        expect(page).to_not have_content("#{@nintendo.name}")
+    end
 end
