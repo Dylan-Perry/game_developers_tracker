@@ -55,7 +55,7 @@ RSpec.describe 'the devs show page' do
 
     it "deletes a developer" do
         visit "/devs/#{@nintendo.id}"
-        click_link("Delete Developer")
+        click_link("Delete #{@nintendo.name}")
 
         expect(current_path).to eq("/devs")
         expect(page).to_not have_content("#{@nintendo.name}")

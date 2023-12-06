@@ -13,3 +13,4 @@
         </ul>
     </ul>
 <h4><a href=<%= "#{@dev.id}/edit" %> title="Edit Developer">Edit <%= @dev.name %></a></h4>
+<h4><%= link_to "Delete #{@dev.name}", "/devs/#{@dev.id}", method: :delete %></h4>

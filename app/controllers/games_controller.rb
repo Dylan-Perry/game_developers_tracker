@@ -34,6 +34,13 @@ class GamesController < ApplicationController
         redirect_to "/games/#{game.id}"
     end
 
+    def destroy
+        game = Game.find(params[:id])
+        game.destroy
+
+        redirect_to "/games"
+    end
+
     def game_params
         params.permit(:name, :players, :online)
     end

@@ -42,4 +42,12 @@ RSpec.describe 'the games show page' do
 
         expect(current_path).to eq("/games/#{@lil_pump.id}/edit")
     end
+
+    it "deletes a developer" do
+        visit "/games/#{@lil_pump.id}"
+        click_link("Delete #{@lil_pump.name}")
+
+        expect(current_path).to eq("/games")
+        expect(page).to_not have_content("#{@lil_pump.name}")
+    end
 end

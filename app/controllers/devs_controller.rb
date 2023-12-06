@@ -32,6 +32,13 @@ class DevsController < ApplicationController
         redirect_to "/devs/#{dev.id}"
     end
 
+    def destroy
+        dev = Dev.find(params[:id])
+        dev.destroy
+
+        redirect_to "/devs"
+    end
+
     def self.sort(type) # see notes above on sorting
         if type == "alpha"
             Dev.order(created_at: :DESC)

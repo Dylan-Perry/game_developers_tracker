@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get "/devs/:id", to: "devs#show"
   get "devs/:id/edit", to: "devs#edit"
   patch "devs/:id", to: "devs#update"
+  delete "devs/:id", to: "devs#destroy"
 
   get "/games", to: "games#index"
   get "/games/new", to: "games#new"
@@ -19,6 +20,7 @@ Rails.application.routes.draw do
   get "/games/:id", to: "games#show"
   get "/games/:id/edit", to: "games#edit"
   patch "games/:id", to: "games#update"
+  delete "games/:id", to: "games#destroy"
   
   get "/devs/:id/games", to: "devs/games#index"
   get "/devs/:id/games/new", to: "devs/games#new"
