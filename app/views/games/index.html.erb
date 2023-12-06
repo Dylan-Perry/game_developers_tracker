@@ -6,7 +6,7 @@
 <br>
 
 <% @games.each do |game| %>
-    <h3><%= game.name %></h3>
+    <h3><a href=<%= request.original_url + "/#{game.id}" %>><%= game.name %></a></h3>
     <p>Entry created: <%= game.created_at %><p>
     <ul>
         <li><p>Developed By: <%= game.dev.name %></p></li>

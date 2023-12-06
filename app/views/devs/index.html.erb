@@ -7,7 +7,7 @@
 <br>
 
 <% @devs.each do |dev| %>
-    <h3><%= dev.name %></h3>
+    <h3><a href=<%= request.original_url + "/#{dev.id}" %>><%= dev.name %></a></h3>
     <p>Entry created: <%= dev.created_at %><p>
     <ul>
         <li><p>Number of Employees: <%= dev.employees %></p></li>
