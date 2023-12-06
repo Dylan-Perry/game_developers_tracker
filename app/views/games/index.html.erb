@@ -13,5 +13,6 @@
         <li><p>Number of Players: <%= game.players %></p></li>
         <li><p>Has Online Play: <%= game.online? %></p></li>
     </ul>
+    <h4><a href=<%= request.original_url + "/#{game.id}/edit" %>>Edit <%= game.name %></a></h4>
     <br>
 <% end %>

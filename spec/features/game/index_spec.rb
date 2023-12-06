@@ -47,4 +47,11 @@ RSpec.describe 'the games index page' do
         expect(page).to_not have_content(@zelda.online?)
         expect(page).to have_content(@starcraft.online?)
     end
+
+    it "links to edit each game" do
+        visit "/games/"
+        click_link("Edit #{@starcraft.name}")
+
+        expect(page).to have_content("Edit #{@starcraft.name}")
+    end
 end
